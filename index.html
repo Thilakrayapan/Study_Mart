@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Mart | The Ultimate Student Ecosystem</title>
+    <meta name="description" content="Study Mart is the dedicated platform for all your student needs: finding print shops, getting second-hand books, and an AI study assistant.">
+    <!-- Google Fonts: Outfit for a modern, tech-focused look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons for UI -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated background nodes -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="ph-fill ph-student"></i>
+                <span>Study<b>Mart</b></span>
+            </a>
+            <div class="nav-links">
+                <a href="#services" class="nav-link">Features</a>
+                <a href="#shop-finder" class="nav-link">Nearby Shops</a>
+                <a href="#books" class="nav-link">Marketplace</a>
+                <a href="#" class="btn-primary">Sign In</a>
+            </div>
+            <button class="mobile-toggle" aria-label="Toggle Menu">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="badge glass">🔥 Engineered for Students</div>
+            <h1 class="hero-title">
+                The Ultimate <br>
+                <span class="gradient-text dynamic-word">Study Ecosystem</span>
+            </h1>
+            <p class="hero-subtitle">
+                Like Zepto for groceries, but for your grades. Discover nearby print shops, buy secondhand books, and unlock A-grades with our smart AI assistant. Everything you need, one tap away.
+            </p>
+            <div class="hero-actions">
+                <button class="btn-glow">Explore Services <i class="ph ph-arrow-right"></i></button>
+                <button class="btn-secondary glass"><i class="ph ph-map-pin"></i> Find Print Shops</button>
+            </div>
+        </div>
+        
+        <!-- Interactive Hero Visual -->
+        <div class="hero-visual">
+            <div class="floating-card user-card glass">
+                <img src="https://i.pravatar.cc/150?img=68" alt="Student Profile" class="avatar">
+                <div class="card-info">
+                    <strong>Study Points</strong>
+                    <span>4,250 ⚡</span>
+                </div>
+            </div>
+            <div class="floating-card task-card glass">
+                <i class="ph-fill ph-printer"></i>
+                <div class="card-info">
+                    <strong>Print Order Ready</strong>
+                    <span>ABC Xerox • 2 mins away</span>
+                </div>
+            </div>
+            <div class="floating-card ai-card glass">
+                <i class="ph-fill ph-robot"></i>
+                <div class="card-info">
+                    <strong>Study AI</strong>
+                    <span>"Your notes are summarized!"</span>
+                </div>
+            </div>
+            <div class="glow-ring"></div>
+        </div>
+    </header>
+
+    <!-- Services Overview Section -->
+    <section id="services" class="services-section">
+        <div class="section-header">
+            <h2>Everything you need. <span class="gradient-text">Zero friction.</span></h2>
+            <p>Four powerful modules designed to completely eliminate student hurdles.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Print Service -->
+            <div class="service-card glass-hover">
+                <div class="service-icon wrapper-blue">
+                    <i class="ph-fill ph-printer"></i>
+                </div>
+                <h3>Cloud Printing</h3>
+                <p>Upload PDFs, compare prices of nearby xerox shops, and click print. Skip the line and just pick it up.</p>
+                <a href="#" class="service-link">View Shops <i class="ph-bold ph-caret-right"></i></a>
+            </div>
+
+            <!-- Shop Finder -->
+            <div class="service-card glass-hover">
+                <div class="service-icon wrapper-purple">
+                    <i class="ph-fill ph-storefront"></i>
+                </div>
+                <h3>Shop Radar</h3>
+                <p>Real-time map showing every stationary and print shop near your college with live pricing and crowd status.</p>
+                <a href="#" class="service-link">Open Map <i class="ph-bold ph-caret-right"></i></a>
+            </div>
+
+            <!-- Book Marketplace -->
+            <div class="service-card glass-hover">
+                <div class="service-icon wrapper-orange">
+                    <i class="ph-fill ph-books"></i>
+                </div>
+                <h3>Book Market</h3>
+                <p>Why buy new? Buy, sell, or rent second-hand engineering, medical, and arts books from your seniors.</p>
+                <a href="#" class="service-link">Browse Books <i class="ph-bold ph-caret-right"></i></a>
+            </div>
+
+            <!-- AI Assistant -->
+            <div class="service-card glass-hover">
+                <div class="service-icon wrapper-green">
+                    <i class="ph-fill ph-sparkle"></i>
+                </div>
+                <h3>AI Co-Pilot</h3>
+                <p>Upload a 50-page PDF and let our AI summarize it, generate flashcards, and quiz you before the exam.</p>
+                <a href="#" class="service-link">Try AI <i class="ph-bold ph-caret-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer glass">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <i class="ph-fill ph-student"></i>
+                    <span>Study<b>Mart</b></span>
+                </a>
+                <p>Empowering the next generation of students with technology.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <a href="#">Print</a>
+                <a href="#">Shops</a>
+                <a href="#">Books</a>
+                <a href="#">AI</a>
+            </div>
+            <div class="footer-links">
+                <h4>Company</h4>
+                <a href="#">About</a>
+                <a href="#">Careers</a>
+                <a href="#">Privacy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Study Mart. Built for Students.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
