@@ -1,32 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Dynamic text typing effect for hero
-<<<<<<< HEAD
     const words = ["Study Ecosystem", "Print Network", "Book Market", "Brainiac Buddy 🤖"];
-=======
-    const words = ["Study Ecosystem", "Print Network", "Book Market", "AI Co-Pilot"];
->>>>>>> b46ecea83e1e67669b99252c6fb9faba9d5adc03
     let i = 0;
     let timer;
     const dynamicText = document.querySelector('.dynamic-word');
 
     // Make Navbar background solid on scroll
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-<<<<<<< HEAD
-            navbar.style.background = 'var(--nav-solid-bg)';
-            navbar.style.border = '1px solid var(--glass-border)';
-=======
-            navbar.style.background = 'rgba(10, 10, 15, 0.8)';
-            navbar.style.border = '1px solid rgba(255,255,255,0.1)';
->>>>>>> b46ecea83e1e67669b99252c6fb9faba9d5adc03
-        } else {
-            navbar.style.background = 'var(--glass-bg)';
-            navbar.style.border = '1px solid var(--glass-border)';
-        }
-    });
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.background = 'var(--nav-solid-bg)';
+                navbar.style.border = '1px solid var(--glass-border)';
+            } else {
+                navbar.style.background = 'var(--glass-bg)';
+                navbar.style.border = '1px solid var(--glass-border)';
+            }
+        });
+    }
 
-<<<<<<< HEAD
     // Theme Toggle Logic
     const themeToggleBtn = document.querySelector('.theme-toggle');
     const themeIcon = document.querySelector('.theme-toggle i');
@@ -61,27 +53,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-=======
->>>>>>> b46ecea83e1e67669b99252c6fb9faba9d5adc03
     // Simple word flipper for the hero section
-    setInterval(() => {
-        dynamicText.style.opacity = 0;
-        setTimeout(() => {
-            i = (i + 1) % words.length;
-            dynamicText.textContent = words[i];
-            dynamicText.style.opacity = 1;
-            dynamicText.style.transition = 'opacity 0.5s ease';
-        }, 500); // Wait for opacity to reach 0
-    }, 3000);
+    if (dynamicText) {
+        dynamicText.style.transition = 'opacity 0.5s ease';
 
-    // Initial transition for opacity
-    dynamicText.style.transition = 'opacity 0.5s ease';
+        setInterval(() => {
+            dynamicText.style.opacity = 0;
+            setTimeout(() => {
+                i = (i + 1) % words.length;
+                dynamicText.textContent = words[i];
+                dynamicText.style.opacity = 1;
+                dynamicText.style.transition = 'opacity 0.5s ease';
+            }, 500);
+        }, 3000);
+    }
 
-    // Mobile menu toggle (simple alert for now since no menu HTML)
+    // Mobile menu toggle
     const mobileToggle = document.querySelector('.mobile-toggle');
-    if (mobileToggle) {
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileToggle && navLinks) {
         mobileToggle.addEventListener('click', () => {
-            alert('Mobile navigation will open here.');
+            const isOpen = navLinks.classList.toggle('mobile-open');
+            const icon = mobileToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('ph-list', !isOpen);
+                icon.classList.toggle('ph-x', isOpen);
+            }
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('mobile-open');
+                const icon = mobileToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('ph-x');
+                    icon.classList.add('ph-list');
+                }
+            });
         });
     }
 
