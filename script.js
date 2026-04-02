@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Dynamic text typing effect for hero
+<<<<<<< HEAD
     const words = ["Study Ecosystem", "Print Network", "Book Market", "Brainiac Buddy 🤖"];
+=======
+    const words = ["Study Ecosystem", "Print Network", "Book Market", "AI Co-Pilot"];
+>>>>>>> b46ecea83e1e67669b99252c6fb9faba9d5adc03
     let i = 0;
     let timer;
     const dynamicText = document.querySelector('.dynamic-word');
@@ -9,14 +13,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
+<<<<<<< HEAD
             navbar.style.background = 'var(--nav-solid-bg)';
             navbar.style.border = '1px solid var(--glass-border)';
+=======
+            navbar.style.background = 'rgba(10, 10, 15, 0.8)';
+            navbar.style.border = '1px solid rgba(255,255,255,0.1)';
+>>>>>>> b46ecea83e1e67669b99252c6fb9faba9d5adc03
         } else {
             navbar.style.background = 'var(--glass-bg)';
             navbar.style.border = '1px solid var(--glass-border)';
         }
     });
 
+<<<<<<< HEAD
     // Theme Toggle Logic
     const themeToggleBtn = document.querySelector('.theme-toggle');
     const themeIcon = document.querySelector('.theme-toggle i');
@@ -51,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+=======
+>>>>>>> b46ecea83e1e67669b99252c6fb9faba9d5adc03
     // Simple word flipper for the hero section
     setInterval(() => {
         dynamicText.style.opacity = 0;

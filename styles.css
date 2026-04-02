@@ -2,6 +2,7 @@
    Base & Variables
    ========================================================================== */
    :root {
+<<<<<<< HEAD
     /* Premium Light Mode (Default variables) */
     --bg-color: #f8fafc;
     --text-main: #0f172a;
@@ -25,6 +26,13 @@
     --text-main: #ffffff;
     --text-muted: #94a3b8;
     
+=======
+    --bg-dark: #0a0a0f;
+    --text-main: #ffffff;
+    --text-muted: #a1a1aa;
+    
+    /* Vibrant gradients */
+>>>>>>> b46ecea83e1e67669b99252c6fb9faba9d5adc03
     --primary: #6366f1;
     --primary-glow: rgba(99, 102, 241, 0.4);
     --secondary: #a855f7;
@@ -32,7 +40,12 @@
     
     --glass-bg: rgba(255, 255, 255, 0.03);
     --glass-border: rgba(255, 255, 255, 0.08);
+<<<<<<< HEAD
     --nav-solid-bg: rgba(15, 17, 26, 0.9);
+=======
+    
+    --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+>>>>>>> b46ecea83e1e67669b99252c6fb9faba9d5adc03
 }
 
 * {
@@ -42,7 +55,11 @@
 }
 
 body {
+<<<<<<< HEAD
     background-color: var(--bg-color);
+=======
+    background-color: var(--bg-dark);
+>>>>>>> b46ecea83e1e67669b99252c6fb9faba9d5adc03
     color: var(--text-main);
     font-family: var(--font-sans);
     line-height: 1.6;
@@ -250,7 +267,11 @@ a {
 
 .btn-glow {
     background: var(--text-main);
+<<<<<<< HEAD
     color: var(--bg-color);
+=======
+    color: var(--bg-dark);
+>>>>>>> b46ecea83e1e67669b99252c6fb9faba9d5adc03
     padding: 16px 32px;
     border-radius: 100px;
     font-weight: 700;
@@ -580,6 +601,7 @@ a {
 }
 
 @media (max-width: 768px) {
+<<<<<<< HEAD
     .navbar { padding: 8px 16px; width: 95%; top: 10px; }
     .nav-links { display: none; }
     .mobile-toggle { display: block; color: var(--text-main); }
@@ -597,4 +619,13 @@ a {
     .footer { padding: 40px 5% 20px; margin-top: 60px; }
     .footer-content { gap: 30px; flex-direction: column; text-align: center; }
     .footer-brand { max-width: 100%; margin: 0 auto; }
+=======
+    .nav-links { display: none; }
+    .mobile-toggle { display: block; }
+    
+    .hero-title { font-size: 2.8rem; }
+    .section-header h2 { font-size: 2.5rem; }
+    .hero-actions { flex-direction: column; width: 100%; }
+    .btn-glow, .btn-secondary { width: 100%; justify-content: center; }
+>>>>>>> b46ecea83e1e67669b99252c6fb9faba9d5adc03
 }
