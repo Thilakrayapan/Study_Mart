@@ -1,23 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Dynamic text typing effect for hero
-    const words = ["Study Ecosystem", "Print Network", "Book Market", "Brainiac Buddy 🤖"];
-    let i = 0;
-    let timer;
-    const dynamicText = document.querySelector('.dynamic-word');
-
-    // Make Navbar background solid on scroll
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'var(--nav-solid-bg)';
-            navbar.style.border = '1px solid var(--glass-border)';
-        } else {
-            navbar.style.background = 'var(--glass-bg)';
-            navbar.style.border = '1px solid var(--glass-border)';
-        }
-    });
-
+    // ======================================================================
     // Theme Toggle Logic
+    // ======================================================================
     const themeToggleBtn = document.querySelector('.theme-toggle');
     const themeIcon = document.querySelector('.theme-toggle i');
     
@@ -51,29 +35,74 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Simple word flipper for the hero section
-    setInterval(() => {
-        dynamicText.style.opacity = 0;
-        setTimeout(() => {
-            i = (i + 1) % words.length;
-            dynamicText.textContent = words[i];
-            dynamicText.style.opacity = 1;
-            dynamicText.style.transition = 'opacity 0.5s ease';
-        }, 500); // Wait for opacity to reach 0
-    }, 3000);
-
-    // Initial transition for opacity
-    dynamicText.style.transition = 'opacity 0.5s ease';
-
-    // Mobile menu toggle (simple alert for now since no menu HTML)
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', () => {
-            alert('Mobile navigation will open here.');
+    // ======================================================================
+    // Make Navbar background solid on scroll
+    // ======================================================================
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.background = 'var(--nav-solid-bg)';
+                navbar.style.border = '1px solid var(--glass-border)';
+            } else {
+                navbar.style.background = 'var(--glass-bg)';
+                navbar.style.border = '1px solid var(--glass-border)';
+            }
         });
     }
 
-    // Add gentle 3D hover effect to the floating cards
+    // ======================================================================
+    // Dynamic text typing effect for hero (only on index page)
+    // ======================================================================
+    const dynamicText = document.querySelector('.dynamic-word');
+    if (dynamicText) {
+        const words = ["Study Ecosystem", "Print Network", "Book Market", "Brainiac Buddy 🤖"];
+        let i = 0;
+
+        dynamicText.style.transition = 'opacity 0.5s ease';
+
+        setInterval(() => {
+            dynamicText.style.opacity = 0;
+            setTimeout(() => {
+                i = (i + 1) % words.length;
+                dynamicText.textContent = words[i];
+                dynamicText.style.opacity = 1;
+            }, 500);
+        }, 3000);
+    }
+
+    // ======================================================================
+    // Mobile Menu Toggle — slide-down nav
+    // ======================================================================
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileToggle && navLinks) {
+        mobileToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('mobile-open');
+            const icon = mobileToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('ph-list', !isOpen);
+                icon.classList.toggle('ph-x', isOpen);
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('mobile-open');
+                const icon = mobileToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('ph-x');
+                    icon.classList.add('ph-list');
+                }
+            });
+        });
+    }
+
+    // ======================================================================
+    // 3D hover effect on floating cards (only on pages that have them)
+    // ======================================================================
     const cards = document.querySelectorAll('.floating-card');
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
