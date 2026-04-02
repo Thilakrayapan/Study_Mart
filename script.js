@@ -9,13 +9,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(10, 10, 15, 0.8)';
-            navbar.style.border = '1px solid rgba(255,255,255,0.1)';
+            navbar.style.background = 'var(--nav-solid-bg)';
+            navbar.style.border = '1px solid var(--glass-border)';
         } else {
             navbar.style.background = 'var(--glass-bg)';
             navbar.style.border = '1px solid var(--glass-border)';
         }
     });
+
+    // Theme Toggle Logic
+    const themeToggleBtn = document.querySelector('.theme-toggle');
+    const themeIcon = document.querySelector('.theme-toggle i');
+    
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('study-mart-theme', theme);
+        if (themeIcon) {
+            if (theme === 'dark') {
+                themeIcon.classList.remove('ph-moon');
+                themeIcon.classList.add('ph-sun');
+            } else {
+                themeIcon.classList.remove('ph-sun');
+                themeIcon.classList.add('ph-moon');
+            }
+        }
+    }
+
+    // Initialize Theme
+    const savedTheme = localStorage.getItem('study-mart-theme');
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else {
+        setTheme('dark'); // Default theme
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+    }
 
     // Simple word flipper for the hero section
     setInterval(() => {
