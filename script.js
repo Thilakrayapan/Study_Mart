@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Dynamic text typing effect for hero
-    const words = ["Study Ecosystem", "Print Network", "Book Market", "AI Co-Pilot"];
+    const words = ["Study Ecosystem", "Print Network", "Book Market", "Brainiac Buddy 🤖"];
     let i = 0;
     let timer;
     const dynamicText = document.querySelector('.dynamic-word');
