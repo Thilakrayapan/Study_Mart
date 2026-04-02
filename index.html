@@ -14,6 +14,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <script>
+        // Apply saved theme immediately to prevent flash
+        const savedTheme = localStorage.getItem('study-mart-theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+
     <!-- Animated background nodes -->
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
@@ -30,20 +36,22 @@
                 <a href="#services" class="nav-link">Features</a>
                 <a href="#shop-finder" class="nav-link">Nearby Shops</a>
                 <a href="books.html" class="nav-link">Marketplace</a>
+                <a href="login.html" class="btn-primary">Sign In</a>
+            </div>
+            <div style="display: flex; gap: 15px; align-items: center;">
                 <button class="theme-toggle glass" aria-label="Toggle Theme" style="padding: 8px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text-main); border: 1px solid var(--glass-border); background: var(--glass-bg);">
                     <i class="ph ph-sun" style="font-size: 1.2rem;"></i>
                 </button>
-                <a href="login.html" class="btn-primary">Sign In</a>
+                <button class="mobile-toggle" aria-label="Toggle Menu">
+                    <i class="ph ph-list"></i>
+                </button>
             </div>
-            <button class="mobile-toggle" aria-label="Toggle Menu">
-                <i class="ph ph-list"></i>
-            </button>
         </div>
     </nav>
 
     <!-- Main Hero Section -->
     <header class="hero">
-        <div class="hero-content">
+        <div class="hero-content scroll-reveal">
             <div class="badge glass">🔥 Engineered for Students</div>
             <h1 class="hero-title">
                 The Ultimate <br>
@@ -59,7 +67,7 @@
         </div>
         
         <!-- Interactive Hero Visual -->
-        <div class="hero-visual">
+        <div class="hero-visual scroll-reveal" data-delay="200">
             <div class="floating-card user-card glass">
                 <img src="https://i.pravatar.cc/150?img=68" alt="Student Profile" class="avatar">
                 <div class="card-info">
@@ -87,14 +95,14 @@
 
     <!-- Services Overview Section -->
     <section id="services" class="services-section">
-        <div class="section-header">
+        <div class="section-header scroll-reveal">
             <h2>Everything you need. <span class="gradient-text">Zero friction.</span></h2>
             <p>Four powerful modules designed to completely eliminate student hurdles.</p>
         </div>
 
         <div class="services-grid">
             <!-- Print Service -->
-            <div class="service-card glass-hover">
+            <div class="service-card glass-hover scroll-reveal" data-delay="0">
                 <div class="service-icon wrapper-blue">
                     <i class="ph-fill ph-printer"></i>
                 </div>
@@ -104,7 +112,7 @@
             </div>
 
             <!-- Shop Finder -->
-            <div class="service-card glass-hover">
+            <div class="service-card glass-hover scroll-reveal" data-delay="100">
                 <div class="service-icon wrapper-purple">
                     <i class="ph-fill ph-storefront"></i>
                 </div>
@@ -114,7 +122,7 @@
             </div>
 
             <!-- Book Marketplace -->
-            <div class="service-card glass-hover">
+            <div class="service-card glass-hover scroll-reveal" data-delay="200">
                 <div class="service-icon wrapper-orange">
                     <i class="ph-fill ph-books"></i>
                 </div>
@@ -124,19 +132,19 @@
             </div>
 
             <!-- AI Assistant -->
-            <div class="service-card glass-hover">
+            <div class="service-card glass-hover scroll-reveal" data-delay="300">
                 <div class="service-icon wrapper-green">
                     <i class="ph-fill ph-sparkle"></i>
                 </div>
                 <h3>Brainiac Buddy 🤖</h3>
                 <p>Upload a 50-page PDF and let our AI summarize it, generate flashcards, and quiz you before the exam.</p>
-                <a href="#" class="service-link">Chat with Buddy <i class="ph-bold ph-caret-right"></i></a>
+                <a href="ai.html" class="service-link">Chat with Buddy <i class="ph-bold ph-caret-right"></i></a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer glass">
+    <footer class="footer glass scroll-reveal">
         <div class="footer-content">
             <div class="footer-brand">
                 <a href="#" class="logo">

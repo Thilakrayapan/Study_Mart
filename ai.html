@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainiac Buddy | Study Mart</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .ai-chat-container {
+            max-width: 800px;
+            margin: 150px auto 100px;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+        .chat-header {
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border-bottom: 1px solid var(--glass-border);
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .chat-header i { font-size: 2rem; color: #10b981; }
+        .chat-messages {
+            flex: 1;
+            padding: 24px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .message { max-width: 80%; padding: 16px 20px; border-radius: 20px; font-size: 1rem; }
+        .bot { background: rgba(16, 185, 129, 0.1); color: var(--text-main); align-self: flex-start; border-bottom-left-radius: 0; }
+        .user { background: var(--primary); color: white; align-self: flex-end; border-bottom-right-radius: 0; }
+        .chat-input-area {
+            padding: 24px;
+            display: flex;
+            gap: 12px;
+            border-top: 1px solid var(--glass-border);
+        }
+        .chat-input-area input {
+            flex: 1;
+            padding: 16px 24px;
+            border-radius: 100px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            color: var(--text-main);
+            font-size: 1rem;
+            outline: none;
+            font-family: inherit;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Apply saved theme immediately to prevent flash
+        const savedTheme = localStorage.getItem('study-mart-theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="ph-fill ph-student"></i>
+                <span>Study<b>Mart</b></span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#services" class="nav-link">Features</a>
+                <a href="index.html#shop-finder" class="nav-link">Nearby Shops</a>
+                <a href="books.html" class="nav-link">Marketplace</a>
+                <a href="login.html" class="btn-primary">Sign In</a>
+            </div>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <button class="theme-toggle glass" aria-label="Toggle Theme" style="padding: 8px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text-main); border: 1px solid var(--glass-border); background: var(--glass-bg);">
+                    <i class="ph ph-sun" style="font-size: 1.2rem;"></i>
+                </button>
+                <button class="mobile-toggle" aria-label="Toggle Menu">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="ai-chat-container glass">
+        <div class="chat-header">
+            <i class="ph-fill ph-robot"></i>
+            <div>
+                <h2 style="font-size: 1.5rem; font-weight: 700;">Brainiac Buddy</h2>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Your personal AI study assistant</p>
+            </div>
+        </div>
+        <div class="chat-messages">
+            <div class="message bot">
+                Hey there! 👋 I'm Brainiac Buddy. Upload your PDF notes or ask me any question to get started!
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <button class="btn-secondary glass" style="padding: 12px; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;">
+                <i class="ph ph-paperclip" style="font-size: 1.5rem;"></i>
+            </button>
+            <input type="text" placeholder="Message Brainiac Buddy or type '/quiz'...">
+            <button class="btn-primary" style="padding: 12px 24px; border-radius: 100px;">
+                <i class="ph-bold ph-paper-plane-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
