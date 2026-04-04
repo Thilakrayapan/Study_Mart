@@ -21,16 +21,11 @@
             position: relative;
             z-index: 10;
         }
-        .auth-card {
-            width: 100%;
-            max-width: 450px;
-            padding: 40px;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
         .auth-header {
             text-align: center;
             margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
         }
         .auth-header .logo {
             display: inline-flex;
@@ -40,34 +35,21 @@
         .auth-header h1 {
             font-size: 2rem;
             margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
         .auth-header p {
             color: var(--text-muted);
         }
         .form-group {
             margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
             color: var(--text-muted);
-        }
-        .form-control {
-            width: 100%;
-            padding: 14px 16px;
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            color: var(--text-main);
-            font-family: inherit;
-            font-size: 1rem;
-            transition: 0.3s;
-        }
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px var(--primary-glow);
         }
         .btn-full {
             width: 100%;
@@ -81,6 +63,8 @@
             text-align: center;
             margin-top: 24px;
             color: var(--text-muted);
+            position: relative;
+            z-index: 1;
         }
         .auth-footer a {
             color: var(--primary);
@@ -116,7 +100,7 @@
     <div class="auth-container">
         <a href="index.html" class="back-link"><i class="ph-bold ph-arrow-left"></i> Back to Home</a>
         
-        <div class="auth-card glass">
+        <div class="skeuo-auth-card">
             <div class="auth-header">
                 <a href="index.html" class="logo">
                     <i class="ph-fill ph-student"></i>
@@ -129,18 +113,18 @@
             <form action="#">
                 <div class="form-group">
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                    <input type="text" id="name" class="skeuo-input" placeholder="John Doe" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" class="form-control" placeholder="student@college.edu" required>
+                    <input type="email" id="email" class="skeuo-input" placeholder="student@college.edu" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                    <input type="password" id="password" class="skeuo-input" placeholder="••••••••" required>
                 </div>
                 
-                <button type="submit" class="btn-primary btn-full" style="border:none; cursor:pointer;">Sign Up</button>
+                <button type="submit" class="btn-primary btn-full">Sign Up</button>
             </form>
             
             <div class="auth-footer">
