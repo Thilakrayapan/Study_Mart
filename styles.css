@@ -1324,6 +1324,56 @@ html {
         height: 44px;
     }
 }
+
+/* Chat input should flex and not overflow on small screens */
+.chat-input-area .skeuo-input {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Xerox calculator panel styling */
+.xerox-calc {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow-out);
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Chat message width and alignment tweaks for small screens */
+@media (max-width: 600px) {
+    .ai-chat-container .message {
+        max-width: 92%;
+        padding: 12px 14px;
+        border-radius: 16px;
+    }
+
+    .ai-chat-container .bot {
+        align-self: flex-start;
+    }
+
+    .ai-chat-container .user {
+        align-self: flex-end;
+    }
+}
+
+/* Make services and books stack earlier for tablets */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* hide heavy hero visuals on small tablets */
+    .hero-visual {
+        display: none;
+    }
+}
     .hero {
         padding: 120px 5% 40px;
     }
