@@ -219,16 +219,16 @@
     </header>
 
     <div class="filters">
-        <button class="skeuo-chip active">All Books</button>
-        <button class="skeuo-chip">Computer Science</button>
-        <button class="skeuo-chip">Medical</button>
-        <button class="skeuo-chip">Engineering</button>
-        <button class="skeuo-chip">Arts & Commerce</button>
+        <button class="skeuo-chip active" data-category="all">All Books</button>
+        <button class="skeuo-chip" data-category="cs">Computer Science</button>
+        <button class="skeuo-chip" data-category="med">Medical</button>
+        <button class="skeuo-chip" data-category="eng">Engineering</button>
+        <button class="skeuo-chip" data-category="arts">Arts & Commerce</button>
     </div>
 
     <section class="books-grid">
         <!-- Book 1 -->
-        <div class="book-card">
+        <div class="book-card" data-category="cs">
             <div class="book-image img-cs">
                 <i class="ph-fill ph-code"></i>
                 <div class="price-badge">$15.00</div>
@@ -246,7 +246,7 @@
         </div>
 
         <!-- Book 2 -->
-        <div class="book-card">
+        <div class="book-card" data-category="eng">
             <div class="book-image img-eng">
                 <i class="ph-fill ph-gear"></i>
                 <div class="price-badge">$22.50</div>
@@ -264,7 +264,7 @@
         </div>
 
         <!-- Book 3 -->
-        <div class="book-card">
+        <div class="book-card" data-category="med">
             <div class="book-image img-med">
                 <i class="ph-fill ph-heartbeat"></i>
                 <div class="price-badge">$45.00</div>
@@ -282,7 +282,7 @@
         </div>
 
         <!-- Book 4 -->
-        <div class="book-card">
+        <div class="book-card" data-category="arts">
             <div class="book-image img-arts">
                 <i class="ph-fill ph-palette"></i>
                 <div class="price-badge">$12.00</div>
@@ -294,6 +294,42 @@
                 <div class="book-meta">
                     <span><i class="ph-fill ph-star"></i> Fair (Highlighting)</span>
                     <span><i class="ph-fill ph-map-pin"></i> 1st Year Dorms</span>
+                </div>
+                <button class="buy-btn">Contact Seller</button>
+            </div>
+        </div>
+
+        <!-- Book 5 -->
+        <div class="book-card" data-category="cs">
+            <div class="book-image img-cs">
+                <i class="ph-fill ph-cpu"></i>
+                <div class="price-badge">$28.00</div>
+            </div>
+            <div class="book-info">
+                <span class="book-tag">Computer Science</span>
+                <h3 class="book-title">Operating System Concepts</h3>
+                <p class="book-author">by Abraham Silberschatz</p>
+                <div class="book-meta">
+                    <span><i class="ph-fill ph-star"></i> Very Good</span>
+                    <span><i class="ph-fill ph-map-pin"></i> CS Department</span>
+                </div>
+                <button class="buy-btn">Contact Seller</button>
+            </div>
+        </div>
+
+        <!-- Book 6 -->
+        <div class="book-card" data-category="eng">
+            <div class="book-image img-eng">
+                <i class="ph-fill ph-wrench"></i>
+                <div class="price-badge">$18.50</div>
+            </div>
+            <div class="book-info">
+                <span class="book-tag">Engineering</span>
+                <h3 class="book-title">Thermodynamics</h3>
+                <p class="book-author">by Cengel & Boles</p>
+                <div class="book-meta">
+                    <span><i class="ph-fill ph-star"></i> Good</span>
+                    <span><i class="ph-fill ph-map-pin"></i> Engineering Block</span>
                 </div>
                 <button class="buy-btn">Contact Seller</button>
             </div>

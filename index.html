@@ -11,14 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Phosphor Icons for UI -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Leaflet for Maps - Temporarily disabled for testing -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> -->
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
     <script>
         // Apply saved theme immediately to prevent flash
-        const savedTheme = localStorage.getItem('study-mart-theme') || 'dark';
+        const savedTheme = localStorage.getItem('study-mart-theme') || 'light'; // Changed to light as default
         document.documentElement.setAttribute('data-theme', savedTheme);
     </script>
+</head>
+<body>
 
     <!-- Animated background nodes -->
     <div class="bg-orb orb-1"></div>
@@ -40,7 +43,7 @@
             </div>
             <div style="display: flex; gap: 15px; align-items: center;">
                 <button class="theme-toggle" aria-label="Toggle Theme">
-                    <i class="ph ph-sun"></i>
+                    <i class="ph ph-moon"></i>
                 </button>
                 <button class="mobile-toggle" aria-label="Toggle Menu">
                     <i class="ph ph-list"></i>
@@ -108,7 +111,7 @@
                 </div>
                 <h3>Cloud Printing</h3>
                 <p>Upload PDFs, compare prices of nearby xerox shops, and click print. Skip the line and just pick it up.</p>
-                <a href="#" class="service-link">View Shops <i class="ph-bold ph-caret-right"></i></a>
+                <a href="#print-upload" class="service-link">Upload Files <i class="ph-bold ph-caret-right"></i></a>
             </div>
 
             <!-- Shop Finder -->
@@ -118,7 +121,7 @@
                 </div>
                 <h3>Shop Radar</h3>
                 <p>Real-time map showing every stationary and print shop near your college with live pricing and crowd status.</p>
-                <a href="#" class="service-link">Open Map <i class="ph-bold ph-caret-right"></i></a>
+                <a href="#shop-finder" class="service-link">Open Map <i class="ph-bold ph-caret-right"></i></a>
             </div>
 
             <!-- Book Marketplace -->
@@ -139,6 +142,98 @@
                 <h3>Brainiac Buddy 🤖</h3>
                 <p>Upload a 50-page PDF and let our AI summarize it, generate flashcards, and quiz you before the exam.</p>
                 <a href="ai.html" class="service-link">Chat with Buddy <i class="ph-bold ph-caret-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Finder Section -->
+    <section id="shop-finder" class="shop-finder-section">
+        <div class="section-header scroll-reveal">
+            <h2>Find Print Shops <span class="gradient-text">Near You</span></h2>
+            <p>Real-time map showing every stationary and print shop with live pricing.</p>
+        </div>
+        
+        <div class="map-container glass scroll-reveal" data-delay="200" style="display: none;">
+            <div id="map" style="height: 500px; border-radius: 20px;"></div>
+        </div>
+        
+        <div class="shops-list scroll-reveal" data-delay="400">
+            <div class="shops-grid">
+                <!-- Sample shops - will be populated dynamically -->
+                <div class="shop-card glass-hover">
+                    <div class="shop-icon">
+                        <i class="ph-fill ph-storefront"></i>
+                    </div>
+                    <div class="shop-info">
+                        <h3>ABC Xerox</h3>
+                        <p>2 mins away • Open now</p>
+                        <div class="shop-prices">
+                            <span>BW: ₹1/page</span>
+                            <span>Color: ₹5/page</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary">Select Shop</button>
+                </div>
+                
+                <div class="shop-card glass-hover">
+                    <div class="shop-icon">
+                        <i class="ph-fill ph-printer"></i>
+                    </div>
+                    <div class="shop-info">
+                        <h3>Fast Print Hub</h3>
+                        <p>5 mins away • Open now</p>
+                        <div class="shop-prices">
+                            <span>BW: ₹1.5/page</span>
+                            <span>Color: ₹6/page</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary">Select Shop</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Print Upload Section -->
+    <section id="print-upload" class="print-upload-section">
+        <div class="section-header scroll-reveal">
+            <h2>Upload & <span class="gradient-text">Print</span></h2>
+            <p>Upload your PDFs, select options, and get instant quotes from nearby shops.</p>
+        </div>
+        
+        <div class="upload-container glass scroll-reveal" data-delay="200">
+            <div class="upload-area">
+                <div class="upload-icon">
+                    <i class="ph-fill ph-cloud-arrow-up"></i>
+                </div>
+                <h3>Drop your PDF here</h3>
+                <p>or click to browse files</p>
+                <input type="file" id="file-input" accept=".pdf" multiple style="display: none;">
+                <button class="btn-glow" onclick="document.getElementById('file-input').click()">Choose Files</button>
+            </div>
+            
+            <div class="upload-options">
+                <div class="option-group">
+                    <label>Print Type</label>
+                    <select class="skeuo-select">
+                        <option>Black & White</option>
+                        <option>Color</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label>Copies</label>
+                    <input type="number" class="skeuo-input" value="1" min="1">
+                </div>
+                <div class="option-group">
+                    <label>Pages per side</label>
+                    <select class="skeuo-select">
+                        <option>Single-sided</option>
+                        <option>Double-sided</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="upload-actions">
+                <button class="btn-primary" id="get-quote-btn">Get Instant Quote</button>
             </div>
         </div>
     </section>

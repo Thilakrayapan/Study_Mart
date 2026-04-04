@@ -106,7 +106,7 @@
 <body>
     <script>
         // Apply saved theme immediately to prevent flash
-        const savedTheme = localStorage.getItem('study-mart-theme') || 'dark';
+        const savedTheme = localStorage.getItem('study-mart-theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
     </script>
     <div class="bg-orb orb-1"></div>
@@ -143,7 +143,37 @@
                 <h2 style="font-size: 1.5rem; font-weight: 700;">Brainiac Buddy</h2>
                 <p style="color: var(--text-muted); font-size: 0.9rem;">Your personal AI study assistant</p>
             </div>
+            <div style="margin-left: auto;">
+                <button id="xerox-toggle" class="btn-secondary" style="padding:8px 12px; border-radius:10px;">Xerox Calculator</button>
+            </div>
         </div>
+
+        <!-- Xerox Calculator Panel (hidden by default) -->
+        <div id="xerox-calc" class="xerox-calc" style="display: none; margin: 12px 0;">
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <div style="flex:1; min-width:120px;">
+                    <label style="font-weight:600; display:block; margin-bottom:6px;">Pages</label>
+                    <input id="xerox-pages" type="number" min="1" value="1" class="skeuo-input" />
+                </div>
+                <div style="flex:1; min-width:120px;">
+                    <label style="font-weight:600; display:block; margin-bottom:6px;">Copies</label>
+                    <input id="xerox-copies" type="number" min="1" value="1" class="skeuo-input" />
+                </div>
+                <div style="flex:1; min-width:150px;">
+                    <label style="font-weight:600; display:block; margin-bottom:6px;">Type</label>
+                    <select id="xerox-type" class="skeuo-select"><option>Black & White</option><option>Color</option></select>
+                </div>
+                <div style="flex:1; min-width:150px;">
+                    <label style="font-weight:600; display:block; margin-bottom:6px;">Sides</label>
+                    <select id="xerox-sides" class="skeuo-select"><option>Single-sided</option><option>Double-sided</option></select>
+                </div>
+            </div>
+            <div style="margin-top:12px; display:flex; gap:8px; justify-content:flex-end;">
+                <button id="xerox-calc-cancel" class="btn-secondary">Cancel</button>
+                <button id="xerox-calc-run" class="btn-primary">Calculate</button>
+            </div>
+        </div>
+
         <div class="chat-messages">
             <div class="message bot">
                 Hey there! 👋 I'm Brainiac Buddy. Upload your PDF notes or ask me any question to get started!
